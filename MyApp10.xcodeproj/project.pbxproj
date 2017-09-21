@@ -16,6 +16,7 @@
 		37E40A051F7246410088014A /* Page2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E40A041F7246410088014A /* Page2VC.swift */; };
 		37E40A071F724C510088014A /* Page3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E40A061F724C510088014A /* Page3VC.swift */; };
 		37E40A091F724F200088014A /* Page3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E40A081F724F200088014A /* Page3TableViewCell.swift */; };
+		37E40A0B1F734E3A0088014A /* Page4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E40A0A1F734E3A0088014A /* Page4VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		37E40A041F7246410088014A /* Page2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2VC.swift; sourceTree = "<group>"; };
 		37E40A061F724C510088014A /* Page3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page3VC.swift; sourceTree = "<group>"; };
 		37E40A081F724F200088014A /* Page3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page3TableViewCell.swift; sourceTree = "<group>"; };
+		37E40A0A1F734E3A0088014A /* Page4VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page4VC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				37E40A041F7246410088014A /* Page2VC.swift */,
 				37E40A061F724C510088014A /* Page3VC.swift */,
 				37E40A081F724F200088014A /* Page3TableViewCell.swift */,
+				37E40A0A1F734E3A0088014A /* Page4VC.swift */,
 			);
 			path = MyApp10;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				37E40A071F724C510088014A /* Page3VC.swift in Sources */,
 				37E40A051F7246410088014A /* Page2VC.swift in Sources */,
 				37E40A091F724F200088014A /* Page3TableViewCell.swift in Sources */,
+				37E40A0B1F734E3A0088014A /* Page4VC.swift in Sources */,
 				37E409F11F7234BE0088014A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

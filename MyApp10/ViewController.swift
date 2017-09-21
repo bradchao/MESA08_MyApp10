@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var rand: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    var items = ["測試跳頁", "自訂TableViewCell", "UI Part1", "UI Part2", "item11",
+    var items = ["測試跳頁", "自訂TableViewCell", "Edit Table", "UI Part2", "item11",
                  "item11","item11", "item11", "item11", "item11", "item11",
                  "item11", "item11", "item11", "item11", "item11", "item11"]
     
@@ -57,22 +57,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("goto vc3 fail")
                 
             }
+        case 2:
+            if let vc4 = storyboard?.instantiateViewController(withIdentifier: "vc4") {
+                show(vc4, sender: self)
+            }else{
+                print("goto vc4 fail")
+                
+            }
         default:
             print("XX")
         }
     }
-    
-    public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-    }
-    
-//    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-//        return .none
-//    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,9 +77,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-//        tableView.isEditing = false
-    }
-
 }
 
