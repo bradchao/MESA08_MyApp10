@@ -10,8 +10,9 @@ import UIKit
 
 class Page4VC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var items = ["item1","item1","item1","item1","item1",
-                 "item1","item1","item1","item1","item1"]
+    @IBOutlet weak var tableView: UITableView!
+    var items = ["item1","item2","item3","item4","item5",
+                 "item6","item7","item8","item9","item10"]
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -21,15 +22,41 @@ class Page4VC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath)
         
+        cell.textLabel?.text = items[indexPath.row]
+        cell.imageView?.image = UIImage(named: "apple")
+        
         return cell
         
     }
     
+    // 設定是否可以搬移
+    public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // 設定編輯模式
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle{
+        return .none
+    }
+    
+    public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath){
+        
+        // 此處進行陣列交換
+        let moveString = items.remove(at: sourceIndexPath.row)
+        items.insert(moveString, at: destinationIndexPath.row)
+        
+        print(items)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.isEditing = true
+    }
+    
 
 
 }
