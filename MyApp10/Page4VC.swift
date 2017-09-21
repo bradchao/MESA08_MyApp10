@@ -29,15 +29,29 @@ class Page4VC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    // 設定是否可以搬移
+    // 設定是否可以搬移 ==> 不實作implement的話, 預設是可以 move(true)
     public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
+    }
+    
+    // 處理刪除或是新增
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //print("do something")
+        
+        items.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "刪除"
     }
     
     // 設定編輯模式
-    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle{
-        return .none
-    }
+//    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle{
+//        //return .none ==> 使用在  move mode
+//        return .delete
+//    }
     
     public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath){
         
