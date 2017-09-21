@@ -38,9 +38,18 @@ class Page4VC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         //print("do something")
         
-        items.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        
+        if editingStyle == .delete {
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }else if editingStyle == .insert {
+            print("insert")
+            items += ["item \(items.count+1)"]
+            tableView.reloadData()
+            
+            let i = IndexPath(item: items.count-1, section: 0)
+            tableView.scrollToRow(at: i, at: .top, animated: true)
+            
+        }
     }
     
     public func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
@@ -48,10 +57,11 @@ class Page4VC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     // 設定編輯模式
-//    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle{
-//        //return .none ==> 使用在  move mode
-//        return .delete
-//    }
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle{
+        //return .none ==> 使用在  move mode
+        //return .delete
+        return .insert
+    }
     
     public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath){
         

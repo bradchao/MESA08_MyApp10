@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var rand: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    var items = ["測試跳頁", "自訂TableViewCell", "Edit Table", "UI Part2", "item11",
+    var items = ["測試跳頁", "自訂TableViewCell", "Edit Table", "跳頁處理", "item11",
                  "item11","item11", "item11", "item11", "item11", "item11",
                  "item11", "item11", "item11", "item11", "item11", "item11"]
     
@@ -62,6 +62,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 show(vc4, sender: self)
             }else{
                 print("goto vc4 fail")
+                
+            }
+        case 3:
+            if let vc5root = storyboard?.instantiateViewController(withIdentifier: "vc5root") {
+                show(vc5root, sender: self)
+            }else{
+                print("goto vc5root fail")
                 
             }
         default:
